@@ -7,7 +7,7 @@ const cache: Record<string, Media | undefined> = {};
 
 export const mediaService = {
   async getFileUrl(id: string): Promise<Media> {
-    if (cache[id]) {
+    if (cache[id] && cache[id].url) {
       return cache[id];
     }
 
