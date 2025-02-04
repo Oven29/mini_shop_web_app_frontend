@@ -1,6 +1,5 @@
 import axios from 'axios';
 import { API_URL } from '../utils/config';
-import { showAlert } from '../utils/utils';
 
 export const api = axios.create({
   baseURL: API_URL,
@@ -10,13 +9,10 @@ export const api = axios.create({
   },
 });
 
-api.interceptors.request.use(
-  (config) => {
-    config.headers['init_data'] = encodeURIComponent(JSON.stringify(window.Telegram.WebApp.initDataUnsafe));
-    return config;
-  },
-  (error) => {
-    console.log(error);
-    showAlert(`Error ! ${error}`);
+export const setAuthHeader = (token: string | null) => {
+  if (token) {
+    api.defaults.headers["Authorization"] = `Bearer ${token}`;
+  } else {
+    delete api.defaults.headers["Authorization"];
   }
-);
+};

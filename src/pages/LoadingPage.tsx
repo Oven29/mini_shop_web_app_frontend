@@ -1,4 +1,4 @@
-import { ReactNode, useEffect, useState } from 'react'
+import { useEffect, useState } from 'react'
 import LoadingSpineer from './icons/LoadingSpineer'
 import '../main.css'
 
