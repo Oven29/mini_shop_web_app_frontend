@@ -1,6 +1,6 @@
 import { Route, Routes } from 'react-router-dom';
 import CategoryPage from './pages/CategoryPage';
-import StatusWrapper from './components/ui/StatusWrapper';
+import StatusWrapper from './components/StatusWrapper';
 import { useAuth } from './context/AuthContext';
 import { useEffect } from 'react';
 import { setAuthHeader } from './services/api';

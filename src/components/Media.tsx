@@ -1,11 +1,13 @@
 import { useEffect, useState } from "react";
 import { Media } from "../services/schemas";
 import { mediaService } from "../services/mediaService";
-import ImagePlaceholder from "./ui/ImagePlaceholder";
+import ImagePlaceholder from "./icons/ImagePlaceholder";
 
 export default function MediaComponent(
   props: { className?: string, alt: string, media: Media }
 ) {
+  const className = props.className || '';
+
   const [mediaUrl, setMediaUrl] = useState<string>('');
   const [isLoading, setIsLoading] = useState<boolean>(true);
 
@@ -28,10 +30,14 @@ export default function MediaComponent(
   }, [])
 
   if (isLoading) {
-    return <ImagePlaceholder />
+    return (
+      <div className={className}>
+        <ImagePlaceholder />
+      </div>
+    )
   }
 
   return (
-    <img src={mediaUrl} alt={props.alt} className={props.className || ''} />
+    <img src={mediaUrl} alt={props.alt} className={className} />
   )
 }

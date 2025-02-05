@@ -2,7 +2,7 @@ import { useEffect, useState } from "react"
 import { categoryService } from "../services/categoryService";
 import { Product } from "../services/schemas";
 import { useParams } from "react-router-dom";
-import StatusWrapper from "../components/ui/StatusWrapper";
+import StatusWrapper from "../components/StatusWrapper";
 
 export default function CategoryPage() {
   const CategoryId: number = Number.parseInt(useParams().id || '')

@@ -1,6 +1,6 @@
 import { ReactNode } from "react";
-import LoadingPage from "../../pages/LoadingPage";
-import ErrorPage from "../../pages/ErrorPage";
+import LoadingPage from "../pages/LoadingPage";
+import ErrorPage from "../pages/ErrorPage";
 
 export default function StatusWrapper(
   props: { isLoading: boolean, error?: any, children: ReactNode }

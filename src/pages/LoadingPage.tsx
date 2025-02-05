@@ -1,5 +1,5 @@
 import { useEffect, useState } from 'react'
-import LoadingSpineer from './icons/LoadingSpineer'
+import LoadingSpineer from '../components/icons/LoadingSpineer'
 import '../main.css'
 
 export default function LoadingPage() {
